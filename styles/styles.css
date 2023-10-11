@@ -20,7 +20,7 @@
   width: 100%;
 }
 
-@media (min-width: 500px) {
+@media (width >= 500px) {
   .boxes {
     grid-template-columns: repeat(var(--columns), 1fr);
     grid-template-rows: auto;
@@ -39,12 +39,12 @@
   border-radius: 5px;
 }
 
-@media (min-width: 500px) {
+@media (width >= 500px) {
   .boxes .box {
     grid-column: span 6;
   }
 }
-@media (min-width: 1000px) {
+@media (width >= 1000px) {
   .boxes .box {
     grid-column: span 4;
   }
@@ -64,7 +64,7 @@
   object-position: top center;
 }
 
-@media (min-width: 1000px) {
+@media (width >= 1000px) {
   .boxes .box img {
     max-height: 350px;
   }
@@ -88,16 +88,16 @@
 }
 
 @font-face {
-  font-family: "Lora";
+  font-family: Lora;
   font-style: normal;
   font-display: swap;
-  src: url(./fonts/Lora-VariableFont_wght.ttf) format("woff");
+  src: url("./fonts/Lora-VariableFont_wght.ttf") format("woff");
 }
 @font-face {
   font-family: "Noto Sans Display";
   font-style: normal;
   font-display: swap;
-  src: url(./fonts/NotoSansDisplay-VariableFont.ttf) format("woff");
+  src: url("./fonts/NotoSansDisplay-VariableFont.ttf") format("woff");
 }
 html,
 input,
@@ -125,7 +125,7 @@ img {
 }
 
 /** Hjálpar class sem felur sjónrænt en skjálesarar lesa **/
-.sr-only:not(:focus):not(:active) {
+.sr-only:not(:focus, :active) {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   height: 1px;
@@ -139,7 +139,6 @@ img {
   display: grid;
   grid-template-rows: auto;
   grid-template-columns: 100%;
-  /* grid items eru miðjuð */
   justify-items: center;
   gap: var(--vertical-space);
 }
@@ -212,7 +211,7 @@ img {
   text-align: center;
 }
 
-@media (min-width: 500px) {
+@media (width >= 500px) {
   .footer .content {
     grid-template-columns: repeat(var(--columns), 1fr);
     grid-template-rows: auto;
@@ -272,7 +271,7 @@ fieldset textarea {
   width: 100%;
 }
 
-fieldset input[type=checkbox] {
+fieldset [type=checkbox] {
   width: auto;
 }
 
@@ -296,8 +295,8 @@ html {
 }
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
@@ -325,8 +324,8 @@ html {
   --offset: 20px;
   /* Letur stillingar */
   --font-base-size: 1rem;
-  --font-family-base: "Noto Sans Display", Helvetica, Arial, sans-serif;
-  --font-family-heading: "Lora", Georgia, serif;
+  --font-family-base: "Noto Sans Display", helvetica, arial, sans-serif;
+  --font-family-heading: "Lora", georgia, serif;
   /* Transitions */
   --transition-time-short: 300ms;
   --transition-time-long: 600ms;
